@@ -23,3 +23,15 @@ def histo(image_path):
         plt.xlabel(txt)
 
         plt.show()
+
+# 표준편차로 리스트 절반씩 분리
+def seperation_by_sd(lst):
+    n = len(lst)
+
+    if n%2==1:
+        low_sd = lst[:n//2+1]
+        high_sd = lst[n//2+1:]
+    else:
+        low_sd = lst[:n//2]
+        high_sd = lst[n//2:]
+    return low_sd, high_sd
