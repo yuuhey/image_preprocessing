@@ -73,3 +73,17 @@ def find_id_list(search_lst, json_data):
         else:
             result_dict[image_id] = None  # 해당하는 항목이 없을 경우 None으로 표시
     return result_dict
+
+
+# 선명도 계산 - 라플라시안
+def calculate_laplacian_variance(image_path):
+    # 이미지 읽기 (흑백으로 변환)
+    image = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
+
+    # 라플라시안 필터 적용
+    laplacian = cv2.Laplacian(image, cv2.CV_64F)
+
+    # 분산 계산
+    variance_of_laplacian = laplacian.var()
+
+    return variance_of_laplacian
