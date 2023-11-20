@@ -1,0 +1,14 @@
+bbox_result.json
+- bbox 검출 결과에서 filtering 및 처리 거친 최종 bbox 결과 파일
+    image_file: 이미지 파일의 경로입니다.
+    center: 이미지에서 사람의 중심 좌표를 나타내는 키입니다. "ndarray" 키는 중심 좌표의 값이 들어 있는 배열을 나타냅니다.
+    scale: 사람의 크기를 나타내는 키입니다. "ndarray" 키는 크기 값이 들어 있는 배열을 나타냅니다.
+    rotation: 사람의 자세를 나타내는 값으로, 여기서는 항상 0으로 설정되어 있습니다.
+    bbox: 바운딩 박스의 좌표를 나타내는 키로, [x, y, w, h] 형식입니다.
+    bbox_score: 바운딩 박스의 신뢰도(또는 점수)를 나타내는 값입니다.
+    dataset: 데이터셋의 이름을 나타내는 값으로, 여기서는 "coco"입니다.
+    joints_3d: 3D 조인트의 좌표를 나타내는 키입니다. "ndarray" 키는 3D 조인트의 좌표 값이 들어 있는 배열을 나타냅니다.
+    joints_3d_visible: 3D 조인트의 가시성을 나타내는 키입니다. "ndarray" 키는 3D 조인트의 가시성 값이 들어 있는 배열을 나타냅니다.
+    bbox_id: 바운딩 박스의 고유 식별자를 나타내는 값으로, 각 바운딩 박스에 대해 0부터 시작하여 증가하는 값입니다.
+
+result_keypoints_image_processing.json랑 result_keypoints_small_base.json 같음

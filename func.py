@@ -87,3 +87,20 @@ def calculate_laplacian_variance(image_path):
     variance_of_laplacian = laplacian.var()
 
     return variance_of_laplacian
+
+
+# 엔트로피 계산
+def calculate_image_entropy(image_path):
+    # 이미지 로드
+    img = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
+
+    # 이미지 히스토그램 계산
+    hist, _ = np.histogram(img.flatten(), bins=256, range=[0,256])
+
+    # 확률 계산
+    prob = hist / np.sum(hist)
+
+    # 엔트로피 계산
+    entropy = -np.sum(prob * np.log2(prob + 1e-10))  # 1e-10은 로그 계산 시 분모가 0이 되는 것을 방지하기 위한 작은 값
+
+    return entropy

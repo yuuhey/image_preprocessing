@@ -7,3 +7,4 @@ output_folder/
 person_keypoints_val2017.json
 result_keypoints_small_base.json
 result_keypoints_image_processing.json
+COCO_val2017_detections_AP_H_56_person.json
