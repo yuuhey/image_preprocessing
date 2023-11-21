@@ -13,5 +13,8 @@ bbox_result.json
 
 - result_keypoints_image_processing.json랑 result_keypoints_small_base.json 같음
 
+- bbox의 좌표 (x,y,w,h)
 
-bbox의 좌표 (x,y,w,h)
+GT - COCO annotation : person_keypoints_val2017.json
+model keypoints detection result - GT_result.json
+complete model keypoints detection result - result_keypoints.json

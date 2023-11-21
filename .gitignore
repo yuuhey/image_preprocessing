@@ -10,3 +10,5 @@ result_keypoints_image_processing.json
 COCO_val2017_detections_AP_H_56_person.json
 bbox_result.json
 kpts_result.json
+result_keypoints.json
+GT_result.json
