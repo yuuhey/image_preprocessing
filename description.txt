@@ -11,4 +11,7 @@ bbox_result.json
     joints_3d_visible: 3D 조인트의 가시성을 나타내는 키입니다. "ndarray" 키는 3D 조인트의 가시성 값이 들어 있는 배열을 나타냅니다.
     bbox_id: 바운딩 박스의 고유 식별자를 나타내는 값으로, 각 바운딩 박스에 대해 0부터 시작하여 증가하는 값입니다.
 
-result_keypoints_image_processing.json랑 result_keypoints_small_base.json 같음
+- result_keypoints_image_processing.json랑 result_keypoints_small_base.json 같음
+
+
+bbox의 좌표 (x,y,w,h)
