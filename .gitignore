@@ -12,3 +12,4 @@ bbox_result.json
 kpts_result.json
 result_keypoints.json
 GT_result.json
+valid_kpts.json
