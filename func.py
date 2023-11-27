@@ -102,4 +102,37 @@ def calculate_image_entropy_(image):
 
     return entropy
 
-# RGB
+
+# 모멘트 계산
+def moment(image):
+
+    moments = cv2.moments(image)
+
+    # 중심 모멘트
+    cx = int(moments['m10'] / moments['m00'])
+    cy = int(moments['m01'] / moments['m00'])
+
+    # Raw 모멘트
+    m00 = moments['m00']
+    m10 = moments['m10']
+    m01 = moments['m01']
+    return cx, cy
+
+# 대비
+def calculate_contrast(image):
+    # 최대 밝기와 최소 밝기 계산
+    I_max = np.max(image).astype(np.float32)
+    I_min = np.min(image).astype(np.float32)
+
+    # 전역 대비 계산
+    contrast = (I_max - I_min) / (I_max + I_min + 1e-8) # 분모에 작은 값을 더하여 오버플로 방지
+    return(contrast)
+
+# edge
+def edge(image, threshold1=30, threshold2=100):
+    # 에지 감지 수행 (Canny 에지 감지 사용)
+    edges = cv2.Canny(image, threshold1, threshold2)
+    # 에지 픽셀의 강도 출력
+    edge_intensity = np.sum(edges) / (edges.shape[0] * edges.shape[1])
+    
+    return edge_intensity
