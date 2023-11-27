@@ -134,5 +134,5 @@ def edge(image, threshold1=30, threshold2=100):
     edges = cv2.Canny(image, threshold1, threshold2)
     # 에지 픽셀의 강도 출력
     edge_intensity = np.sum(edges) / (edges.shape[0] * edges.shape[1])
-    
-    return edge_intensity
+
+    return np.sum(edges), edge_intensity
