@@ -136,3 +136,12 @@ def edge(image, threshold1=30, threshold2=100):
     edge_intensity = np.sum(edges) / (edges.shape[0] * edges.shape[1])
 
     return np.sum(edges), edge_intensity
+
+# SIFT 특징점
+def SIFT_count(image):
+
+    # SIFT 알고리즘을 사용한 특징점 추출
+    sift = cv2.SIFT_create()
+    keypoints, descriptors = sift.detectAndCompute(image, None)
+
+    return len(keypoints)
