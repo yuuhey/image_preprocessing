@@ -1,4 +1,5 @@
-bbox_result.json
+
+# bbox_result.json
 - bbox 검출 결과에서 filtering 및 처리 거친 최종 bbox 결과 파일
     image_file: 이미지 파일의 경로입니다.
     center: 이미지에서 사람의 중심 좌표를 나타내는 키입니다. "ndarray" 키는 중심 좌표의 값이 들어 있는 배열을 나타냅니다.
@@ -11,10 +12,24 @@ bbox_result.json
     joints_3d_visible: 3D 조인트의 가시성을 나타내는 키입니다. "ndarray" 키는 3D 조인트의 가시성 값이 들어 있는 배열을 나타냅니다.
     bbox_id: 바운딩 박스의 고유 식별자를 나타내는 값으로, 각 바운딩 박스에 대해 0부터 시작하여 증가하는 값입니다.
 
-- result_keypoints_image_processing.json랑 result_keypoints_small_base.json 같음
 
+# additional info
+- result_keypoints_image_processing.json랑 result_keypoints_small_base.json 같음
 - bbox의 좌표 (x,y,w,h)
 
-GT - COCO annotation : person_keypoints_val2017.json
-model keypoints detection result - GT_result.json
-complete model keypoints detection result - result_keypoints.json
+
+# json 파일
+    GT - COCO annotation : person_keypoints_val2017.json
+    model keypoints detection result - GT_result.json
+    complete model keypoints detection result - result_keypoints.json
+
+
+# GT에서 df 만들기 - 파일명(output.csv)
+    make_merged_df_fromGT.ipynb(merged_df) -> calculate_metric_tomergedDF.ipynb(df, n_df)
+
+    *df.csv : metric 계산 다된 완전한 df
+    *n_df.csv : normalized_df
+
+
+# file info
+- mergedDF_visualization.ipynb : haralick 메트릭 제외 나머지 계산한 지표 시각화 
