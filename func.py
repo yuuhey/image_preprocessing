@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import cv2
+import math
 
 # 이미지 밝기 히스토그램
 def histo(image_path):
@@ -145,3 +146,29 @@ def SIFT_count(image):
     keypoints, descriptors = sift.detectAndCompute(image, None)
 
     return len(keypoints)
+
+# 한 이미지에서 PSNR 계산 (이미지 왜곡 정도)
+def calculate_psnr(image):
+
+    # 이미지 크기 확인
+    image_size = image.shape[0] * image.shape[1]
+
+    # MSE 계산 (이미지 자체를 원본으로 간주)
+    mse = np.sum(image ** 2) / float(image_size)
+
+    # PSNR 계산
+    max_pixel_value = 255.0  # 8비트 이미지의 최대 픽셀 값
+    psnr = 10 * np.log10(max_pixel_value**2 / mse)
+
+    return psnr
+
+# centroid moment와 이미지 중심좌표가 어느정도 떨어져 있는지에 대한 정도 
+def centroid_degree(w, h, cx, cy):
+
+    # 이미지 중심 좌표 계산
+    center_x = w // 2
+    center_y = h // 2
+
+    l = math.sqrt(((center_x-cx)/w)**2+((center_y-cy)/h)**2)
+    
+    return l
