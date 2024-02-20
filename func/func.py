@@ -172,3 +172,22 @@ def centroid_degree(w, h, cx, cy):
     l = math.sqrt(((center_x-cx)/w)**2+((center_y-cy)/h)**2)
     
     return l
+
+
+# 기존의 _xywh2cs 함수 정의
+def _xywh2cs(x, y, w, h, padding=1.25):
+    aspect_ratio = 1.0  # 임의로 aspect_ratio를 1.0으로 설정
+    center = np.array([x + w * 0.5, y + h * 0.5], dtype=np.float32)
+
+    if np.random.rand() < 0.3:
+        center += 0.4 * (np.random.rand(2) - 0.5) * [w, h]
+
+    if w > aspect_ratio * h:
+        h = w * 1.0 / aspect_ratio
+    elif w < aspect_ratio * h:
+        w = h * aspect_ratio
+
+    scale = np.array([w / 200.0, h / 200.0], dtype=np.float32)
+    scale = scale * padding
+
+    return center, scale
