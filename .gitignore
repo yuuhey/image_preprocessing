@@ -4,6 +4,8 @@ val2017_0/
 val2017_new/
 output/
 output_folder/
+low_score/
+trainset_metric_calculate/
 person_keypoints_val2017.json
 result_keypoints_small_base.json
 result_keypoints_image_processing.json
